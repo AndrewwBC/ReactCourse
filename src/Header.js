@@ -18,7 +18,7 @@ const HeaderStyled = styled.header`
 `;
 
 const HeaderChildren = styled.div`
-  max-width: 800px;
+  max-width: 1000px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +41,7 @@ const ListItem = styled.li`
 const Link = styled.a`
   text-decoration: none;
   color: white;
-  font-size: 18px;
+  font-size: 24px;
 `;
 
 const Header = () => {

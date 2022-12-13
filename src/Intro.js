@@ -5,7 +5,7 @@ const GridIntro = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   justify-content: center;
-  max-width: 800px;
+  max-width: 1000px;
   margin-top: 120px;
   margin-left: auto;
   margin-right: auto;
@@ -16,7 +16,7 @@ const IntroText = styled.div``;
 
 const Name = styled.h1`
   font-size: 48px;
-  color: #202020;
+  color: white;
   margin-bottom: 12px;
 `;
 
@@ -24,13 +24,13 @@ const History = styled.p`
   font-size: 18px;
   line-height: 1.2;
   letter-spacing: 0.3px;
-  color: #202020;
+  color: white;
   margin-bottom: 16px;
 `;
 
 const Knowledges = styled.p`
   font-size: 18px;
-  color: #202020;
+  color: white;
   letter-spacing: 0.3px;
   margin-bottom: 0px;
 `;
