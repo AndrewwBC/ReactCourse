@@ -1,40 +1,30 @@
 import React from 'react';
-import useLocalStorage from './useLocalStorage';
-import useFecth from './useFecth';
+import Input from './Input';
 
 const App = () => {
-  const [produto, setProduto] = useLocalStorage('produto', '');
-  const { request, data, loading, error } = useFecth();
+  const [cep, setCep] = React.useState('');
 
-  function handleClick({ target }) {
-    setProduto(target.innerText);
+  function handleBlur({ target }) {
+    const regex = /^\d{5}-?\d{3}$/;
+    const validacao = regex.test(target.value);
+    console.log(validacao);
   }
 
-  React.useEffect(() => {
-    async function fetchData() {
-      const { response, json } = await request(
-        'https://ranekapi.origamid.dev/json/api/produto/',
-      );
-    }
-    fetchData();
-  }, [request]);
-
-  if (error) return <p>{error}</p>;
-  if (loading) return <div>Carregando...</div>;
-  if (data)
-    return (
-      <>
-        <p>Produto preferido: {produto}</p>
-        <button onClick={handleClick}>notebook</button>
-        <button onClick={handleClick}>smartphone</button>
-
-        {data.map((item) => (
-          <div key={item.id}>
-            <h1>{item.nome}</h1>
-          </div>
-        ))}
-      </>
-    );
-  else return null;
+  return (
+    <>
+      <form action="">
+        <Input
+          label="CEP"
+          id="cep"
+          type="text"
+          placeholder="00000-000"
+          value={cep}
+          setValue={setCep}
+          onBlur={handleBlur}
+        />
+      </form>
+      <h1>{cep}</h1>
+    </>
+  );
 };
 export default App;
