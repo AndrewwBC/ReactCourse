@@ -84,6 +84,7 @@ const Projects = () => {
 
   return (
     <>
+      // JSX
       <ProjectsContainer>
         <ProjectsTitle>Projetos</ProjectsTitle>
         {ProjectDescription.map(({ link, icons, href, conclusion }, index) => (
