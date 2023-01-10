@@ -92,7 +92,7 @@ const App = () => {
         label="email"
         id="email"
         type="text"
-        placeholder="Email"
+        placeholder="E-mail"
         {...email}
       />
       <button>Enviar</button>
